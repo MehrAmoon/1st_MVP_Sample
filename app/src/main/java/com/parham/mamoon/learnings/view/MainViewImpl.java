@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.etsy.android.grid.StaggeredGridView;
 import com.parham.mamoon.learnings.R;
-import com.parham.mamoon.learnings.model.ImageViewParams;
 import com.parham.mamoon.learnings.model.products;
 import com.parham.mamoon.learnings.presenter.MainPresenter;
 import com.parham.mamoon.learnings.presenter.adaptor;
@@ -81,16 +80,18 @@ public class MainViewImpl extends Fragment implements MainView, AbsListView
     public void ShowSlideShow() {
         mainPresenter.loadSlideShow();
         final ImageView SlideShow = (ImageView) rootView.findViewById(R.id.slideShow);
-        for (int i = 0; i < mainPresenter.loadSlideShow().size(); i++) {
-            SlideShow.setBackgroundResource(Integer.valueOf(mainPresenter.loadSlideShow().get(i)));
-            SlideShow.animate().alpha(mainPresenter.getAnimData().getFirstalpha()).setDuration(mainPresenter.getAnimData().getSetDuration());
+
             SlideShow.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    for (int i = 0; i < mainPresenter.loadSlideShow().size(); i++) {
+                    SlideShow.setBackgroundResource(Integer.valueOf(mainPresenter.loadSlideShow().get(i)));
+                    SlideShow.animate().alpha(mainPresenter.getAnimData().getFirstalpha()).setDuration(mainPresenter.getAnimData().getSetDuration());
                     SlideShow.animate().alpha(mainPresenter.getAnimData().getSecondAlpha()).setDuration(mainPresenter.getAnimData().getSetDuration());
                 }
-            }, 3000);
-        }
+                }
+            }, mainPresenter.getAnimData().getDelay());
+
     }
 
 

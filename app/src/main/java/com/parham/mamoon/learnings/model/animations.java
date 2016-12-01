@@ -5,7 +5,7 @@ package com.parham.mamoon.learnings.model;
  */
 
 public class animations {
-    int setDuration;
+    int setDuration , delay;
     float Firstalpha,SecondAlpha;
 
     public animations() {
@@ -33,5 +33,13 @@ public class animations {
 
     public void setSecondAlpha(float secondAlpha) {
         SecondAlpha = secondAlpha;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
     }
 }

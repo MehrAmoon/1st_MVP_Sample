@@ -88,7 +88,7 @@ public class MainPresenterImpl implements MainPresenter {
         Animations.setSetDuration(500);
         Animations.setFirstalpha(0f);
         Animations.setSecondAlpha(1f);
-
+        Animations.setDelay(2000);
         return Animations;
     }
 }
