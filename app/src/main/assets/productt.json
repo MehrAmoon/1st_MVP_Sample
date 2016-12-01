@@ -1,0 +1,22 @@
+{
+  "adds": [
+    {
+      "cost": "10000",
+      "discount": "5000",
+      "image": "https://s-media-cache-ak0.pinimg.com/236x/e3/9c/e7/e39ce781d0af88486fc0cb625af2f83f.jpg",
+      "favorites": "false"
+    },
+    {
+      "cost": "65000",
+      "discount": "9000",
+      "image": "https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png",
+      "favorites": "true"
+    },
+    {
+      "cost": "7000",
+      "discount": "3000",
+      "image": "https://s-media-cache-ak0.pinimg.com/236x/e3/9c/e7/e39ce781d0af88486fc0cb625af2f83f.jpg",
+      "favorites": "false"
+    }
+  ]
+}

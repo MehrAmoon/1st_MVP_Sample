@@ -1,0 +1,69 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.parham.mamoon.learnings.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <ImageView
+            android:id="@+id/slideShow"
+            android:layout_width="fill_parent"
+            android:layout_height="300px"
+            />
+
+        <View
+            android:id="@+id/SlideshowLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/slideShow"
+            android:layout_marginBottom="10dp"/>
+
+
+        <HorizontalScrollView
+            android:id="@+id/RandCatScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SlideshowLine"
+            android:layout_centerHorizontal="true"
+            >
+
+            <LinearLayout
+                android:id="@+id/RandomCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/RandomcatView2"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/RandCatScroll"
+            android:layout_marginTop="10dp"/>
+
+        <com.etsy.android.grid.StaggeredGridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/RandomcatView2"
+            app:column_count="2"
+            app:item_margin="2dp"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            style="@style/CustomStyle.ProgressBar"/>
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <product>
+        <cost>10000</cost>
+        <discount>7000</discount>
+        <image>http://www.imagenspng.com.br/wp-content/uploads/2015/02/small-super-mario.png</image>
+        <favorites>true</favorites>
+    </product>
+
+    <product>
+        <cost>60000</cost>
+        <discount>10000</discount>
+        <image>https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png</image>
+        <favorites>false</favorites>
+    </product>
+
+    <product>
+        <cost>7000</cost>
+        <discount>3000</discount>
+        <image>https://s-media-cache-ak0.pinimg.com/236x/e3/9c/e7/e39ce781d0af88486fc0cb625af2f83f.jpg</image>
+        <favorites>false</favorites>
+    </product>
+
+    <product>
+        <cost>65000</cost>
+        <discount>9000</discount>
+        <image>https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png</image>
+        <favorites>true</favorites>
+    </product>
+
+    <product>
+        <cost>10000</cost>
+        <discount>5000</discount>
+        <image>https://s-media-cache-ak0.pinimg.com/236x/e3/9c/e7/e39ce781d0af88486fc0cb625af2f83f.jpg</image>
+        <favorites>false</favorites>
+    </product>
+</resources>
+
+
+    [
+    {
+    "date":"11/8/2014",
+    "auther":"nirav kalola",
+    "description":"json object parsing using gson library is easy",
+    "post_name":"json object parsing"
+    },
+    {
+    "date":"12/8/2014",
+    "auther":"nirav kalola",
+    "description":"json array parsing using gson library",
+    "post_name":"json array parsing"
+    },
+    {
+    "date":"17/8/2014",
+    "auther":"nirav kalola",
+    "description":"store json file in assets folder and get data when required",
+    "post_name":"json parsing from assets folder"
+    }
+    ]
