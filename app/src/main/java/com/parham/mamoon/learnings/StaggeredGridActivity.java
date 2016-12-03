@@ -1,13 +1,10 @@
-package com.parham.mamoon.learnings.model;
+package com.parham.mamoon.learnings;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-
-import com.parham.mamoon.learnings.R;
 
 public class StaggeredGridActivity extends Activity implements AbsListView.OnItemClickListener,AbsListView.OnScrollListener{
 

@@ -1,6 +1,4 @@
-package com.parham.mamoon.learnings.model;
-
-import java.util.ArrayList;
+package com.parham.mamoon.learnings.presenter;
 
 /**
  * Created by m.amoon on 11/23/2016.
