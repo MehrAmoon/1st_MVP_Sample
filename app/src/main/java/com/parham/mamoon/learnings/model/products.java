@@ -8,14 +8,14 @@ import java.util.ArrayList;
  * Created by m.amoon on 11/22/2016.
  */
 
-public class products {
+public class Products {
     private String cost, discount, image;
     private Boolean favorite;
     private ArrayList<String> data = new ArrayList<String>();
     private ArrayList<Integer> slideShowPic = new ArrayList<Integer>();
     private ArrayList<Integer> CategoryPic = new ArrayList<Integer>();
 
-    public products() {
+    public Products() {
     }
 
     public ArrayList<Integer> getSlideShowPic() {
