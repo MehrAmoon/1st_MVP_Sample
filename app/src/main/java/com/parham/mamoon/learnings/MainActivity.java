@@ -4,56 +4,44 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.parham.mamoon.learnings.model.Products;
+import com.parham.mamoon.learnings.model.ProductModelImpl;
 import com.parham.mamoon.learnings.presenter.MainPresenter;
 import com.parham.mamoon.learnings.presenter.MainPresenterImpl;
 import com.parham.mamoon.learnings.view.MainView;
 import com.parham.mamoon.learnings.view.MainViewImpl;
 
 /*
-Dear Mehrnaz,
+Hi,
 
-After reviewing the code meticulously, I believe that you have got the gist of MVP and we can
-work in parallel on MVP projects with you undertaking the View-related code.
-However, I came across the following issues in your code that have to be resolved to match the
-best practice as well as eliminate potential waste of time and repetitions in real projects:
-1- In addition to Presenter and PresenterImpl, any other class related to showing a view shall be
-put under the presenter subpackage.
-For example, here I have moved Adaptor, Animations and ImageViewParams from model to presenter
-subpackage.
-This is because they all provide data/layout/params needed for rendering the view and are
-addressed in PresenterImpl.
-2- When the project grows inside, further breakdowns could be necessary in each
-model-view-presenter package, based on feature, for instance.
-3- Classes should start with capital letters and methods with smaller ones. I partly corrected
-this, please do the remaining.
-4- As Dependency Injection is the pattern used for object instantiation, please implement DI using
- Dagger 2.0 in this project after correcting the above.
-5- I do not know what the use of 'StaggeredGridActivity' is in this project. It may have
-remained from your previous cleanup, however.
-6- Any view transitions shall be done through Fragments, using preferably only one MainActivity
-and there is a one-to-one relation between each View and its corresponding Presenter.
-7- As you have not dealt with it up to this stage of development, it would be wise to extend the
-project so inter-View interactions are also cared for and improved in case there is room for.
+As your requested I revised your code and here are my points:
 
-Thanks and Good Luck.
-Ali Nemati Hayati
+1- I split your model to ProductModel and ProductModelImpl and a DTO called Product.
+In MVP you have to communicate with interfaces not public methods.
+2- Presenter should not be concerned with how model gets the data(with android httpRequest or UrlConnection
+or some other class or library). It is not also the concern of Presenter how View shows the data to user.
+so we should use more generic naming like "RenderView()" (not create TextView, create and fill list view and more...)
+because with the power of MVC we are going to implement loose coupling between parts and just
+communicate with Interfaces and DTOs.
+3- View Adapters are also concerned of View and they should decide how to show data to user. but you have to handle
+Items click or list refresh and more with Presenter methods. (what should happen next).
+I also recommend to use RecyclerView and RecyclerAdapters.
+4- I agree with Ali's comment about using Dependency Injection with Dagger2 but it is not mandatory for MVP.
+it is another design pattern that is good to use.
+
+good job
+Mahdi Tajik
+
 * */
 
 public class MainActivity extends AppCompatActivity {
 
-    //    private MainPresenterImpl mPresenter;
-    /* Interface shall be used whenever possible */
     private MainPresenter mPresenter;
-    /* Interface shall be used whenever possible */
     private MainView mainView;
-//    private MainViewImpl mainViewImp;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new MainPresenterImpl(new Products());
+        mPresenter = new MainPresenterImpl(new ProductModelImpl(this));
         mainView = new MainViewImpl(mPresenter);
         InitiateView();
     }
@@ -68,19 +56,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        mPresenter.loadGridView();
     }
 
     @Override
     protected void onDestroy() {
-//        mainPresenter.onDestroy();
         super.onDestroy();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-//        outState.putStringArrayList("Saved", mData);
     }
 
 
