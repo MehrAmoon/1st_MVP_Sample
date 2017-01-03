@@ -1,7 +1,10 @@
-package com.parham.mamoon.learnings.presenter;
+package com.parham.mamoon.learnings.view.utils;
 
 /**
  * Created by m.amoon on 12/1/2016.
+ *
+ * Mahdi Revise: this is also View manner.
+ *
  */
 
 public class Animations {

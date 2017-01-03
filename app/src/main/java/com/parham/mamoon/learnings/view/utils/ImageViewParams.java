@@ -1,4 +1,4 @@
-package com.parham.mamoon.learnings.presenter;
+package com.parham.mamoon.learnings.view.utils;
 
 /**
  * Created by m.amoon on 11/23/2016.

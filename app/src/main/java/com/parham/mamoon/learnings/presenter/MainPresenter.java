@@ -3,35 +3,34 @@ package com.parham.mamoon.learnings.presenter;
 import android.app.Activity;
 import android.widget.AbsListView;
 
+import com.parham.mamoon.learnings.DTO.Product;
 import com.parham.mamoon.learnings.view.MainView;
+import com.parham.mamoon.learnings.view.utils.Adaptor;
+import com.parham.mamoon.learnings.view.utils.Animations;
+import com.parham.mamoon.learnings.view.utils.ImageViewParams;
 
 import java.util.ArrayList;
 
 /**
  * Created by m.amoon on 11/29/2016.
+ *
+ * Mahdi revise: Presenter is had nothing to do
+ * with how view will show data and do not
+ * know what is View components. cause one day
+ * we will want to change the way app show data
+ * and it is not presenter business.
+ *
  */
 
+
 public interface MainPresenter {
-    Adaptor getGridAdaptor(Activity activity);
 
-    ArrayList<Integer> getPicArrayList();
 
-    ArrayList<Integer> getCategoryArrayList();
+    void getData();
 
-    ImageViewParams getMiddleCatImageviewParams();
-
-//    boolean isHasRequestMore();
-//
-//    void setHasRequestMore(boolean hasRequestMore);
+    void itemClick(Product product);
 
     void setView(MainView mainView);
 
-//    ArrayList<String> getGridDataAsList();
 
-    Animations getAnimData();
-
-    void doWhenScrollStateIsChanged(AbsListView absListView, int i);
-
-    void doOnScroll(Activity activity, AbsListView absListView, int firstVis, int visibles, int
-            total);
 }
